@@ -24,7 +24,7 @@ export const LandingPlatformShowcaseSection = () => {
     return (
         <section className="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 py-24 px-4 sm:px-6 lg:px-8">
             {/* Animated texture overlay */}
-            <div className="absolute inset-0 opacity-15 animate-texture-shift bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9Im5vbmUiLz48ZyBmaWx0ZXI9InVybCgjYSkiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNGRkYiLz48L2c+PGZpbHRlciBpZD0iYSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjEuNSIvPjwvZmlsdGVyPjwvc3ZnPg==')]"></div>
+            <div className="absolute inset-0 opacity-15 animate-texture-shift bg-[url('data:https://images.unsplash.com/photo-1588064549181-755cf87668ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZyZWVsYW5jZXxlbnwwfHwwfHx8MA%3D%3D')]"></div>
 
             <div className="mx-auto max-w-7xl flex flex-col lg:flex-row-reverse gap-16 items-center">
                 {/* Image Section */}

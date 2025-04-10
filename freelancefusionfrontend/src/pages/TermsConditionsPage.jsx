@@ -1,8 +1,11 @@
 import React from 'react';
 import { ChevronRight } from 'react-feather';
+import LandingPageNavBar from '../components/LandingPageNavBar';
 
 export default function TermsConditionsPage() {
     return (
+        <>
+            <LandingPageNavBar />  
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
             <section className="py-20 px-4 bg-black text-white">
@@ -124,5 +127,6 @@ export default function TermsConditionsPage() {
                 </section>
             </div>
         </div>
+        </>
     );
 }

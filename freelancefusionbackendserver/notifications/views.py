@@ -16,6 +16,10 @@ class FreelancerNotificationViewSet(viewsets.ModelViewSet):
         # Optionally, handle notification creation logic, such as marking it urgent or relating it to a project
         serializer.save()
         
+    def get_queryset(self):
+        # Filter applications to only those belonging to the current user
+        return Notification.objects.filter(freelancer=self.request.user)
+        
         
         
 class EmployerNotificationViewSet(viewsets.ModelViewSet):
@@ -29,6 +33,7 @@ class EmployerNotificationViewSet(viewsets.ModelViewSet):
         # Optionally, handle notification creation logic, such as marking it urgent or relating it to a project
         serializer.save()
         
+    
         
         
 class AdminNotificationViewSet(viewsets.ModelViewSet):

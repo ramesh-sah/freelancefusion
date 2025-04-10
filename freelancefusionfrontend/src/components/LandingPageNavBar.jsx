@@ -1,44 +1,45 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/image.png'; // Import your logo image
 
 function LandingPageNavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navItems = [
-        { label: 'Home', href: '#' },
-        { label: 'Careers', href: '#' },
+        { label: 'Home', href: '/' },
+        { label: 'Careers', href: '/careers/' },
 
-        { label: 'Policy', href: '#' },
-        { label: 'Terms & Condition', href: '#' },
+        { label: 'Policy', href: '/policy/' },
+        { label: 'Terms & Condition', href: '/terms/' },
     ];
 
     return (
         <header className="bg-gradient-to-b from-white to-gray-300 fixed inset-x-0 top-0 z-50 shadow-sm backdrop-blur-lg border-b border-gray-100/80">
             <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
                 {/* Logo with Image */}
-                <a href="#" className="flex items-center space-x-2 group">
+                <Link to="/" className="flex items-center space-x-2 group">
                     <span className="sr-only">Home</span>
                     <img
-                        src="https://via.placeholder.com/32x32" // Replace with your image URL
+                        src={logo}// Replace with your image URL
                         alt="Company Logo"
                         className="h-8 w-8 rounded-lg object-cover"
                     />
                     <span className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                        YourBrand
+                        FreelanceFusion
                     </span>
-                </a>
+                </Link>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center gap-8">
                     <ul className="flex items-center space-x-6">
                         {navItems.map((item) => (
                             <li key={item.label}>
-                                <a
-                                    href={item.href}
+                                <Link
+                                    to={item.href}
                                     className="relative px-3 py-2 text-gray-900 hover:text-gray-900 transition-all duration-300 group"
                                 >
                                     {item.label}
                                     <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-cyan-400 to-teal-500 transition-all duration-300 group-hover:w-full"></span>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>

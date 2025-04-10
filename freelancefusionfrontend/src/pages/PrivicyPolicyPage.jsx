@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+
     ChevronRight,
     Shield,
     FileText,
@@ -7,12 +8,14 @@ import {
     Users,
     Mail,
 } from 'react-feather';
-
+import LandingPageNavBar from '../components/LandingPageNavBar';
 export default function PrivacyPolicyPage() {
     return (
+        <>
+            <LandingPageNavBar />  
         <div className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="py-20 px-4 bg-gradient-to-r from-gray-900 to-black">
+            <section className="py-20 px-4 bg-gradient-to-r from-gray-900 to-black" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1664575196644-808978af9b1f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)' }}>
                 <div className="max-w-6xl mx-auto text-center">
                     <h1 className="text-4xl font-bold mb-4 text-white">
                         FreelanceFusion Policies
@@ -221,5 +224,6 @@ export default function PrivacyPolicyPage() {
                 </div>
             </div>
         </div>
+        </>
     );
 }

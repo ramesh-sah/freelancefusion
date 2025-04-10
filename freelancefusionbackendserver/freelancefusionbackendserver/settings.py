@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
      'drf_yasg',
-    
+     'khalti',
+     'django_filters',
     
     
     
@@ -102,12 +103,25 @@ WSGI_APPLICATION = 'freelancefusionbackendserver.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',       # Replace with your actual DB name
+        'USER': 'postgres',         # Replace with your PostgreSQL username
+        'PASSWORD': 'Ramesh@5611',     # Replace with your password
+        'HOST': 'localhost',                # Or your DB server hostname/IP
+        'PORT': '5432',                     # Default PostgreSQL port
     }
 }
+
 
 
 # Password validation
@@ -155,7 +169,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-}
+      'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],                      }
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
@@ -195,3 +209,5 @@ CONTRACT_ARTIFACT_PATH = os.path.join(BASE_DIR, '../../freelancefusionsmartcontr
 DEPLOYER_ADDRESS = "0x053c480541269ceb4d557366ea3A4e9189e291c4"
 DEPLOYER_PRIVATE_KEY = "0x07cc5e1518ec2287ae5424049b38cbd0d2e84bae31282406a86fc696cbe5d71d"
 WEB3_CHAIN_ID = 1337  # Ganache default
+KHALTI_SECRET_KEY = "key live_secret_key_68791341fdd94846a146f0457ff7b455"
+KHALTI_VERIFY_URL = "https://khalti.com/api/v2/payment/verify/"

@@ -3,7 +3,7 @@ import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 import CustomUserLoginService from "../services/CustomUserService/CustomUserLoginService";
-
+import logo from '../assets/image.png';
 import { useNavigate } from 'react-router-dom';
 import SuccessAlert from "./SuccessAlert";
 export default function Login() {
@@ -93,7 +93,7 @@ export default function Login() {
         <div className="text-center">
           <img
             className="mx-auto h-16 w-auto hover:scale-105 transition-transform duration-300"
-            src="https://images.unsplash.com/photo-1633409361618-c73427e4e206"
+            src={logo}
             alt="Logo"
           />
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900">Welcome back</h2>

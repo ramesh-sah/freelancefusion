@@ -9,11 +9,18 @@ class  FreelancerApplicationViewSet(viewsets.ModelViewSet):
     queryset = Application.objects.all()
     serializer_class = ApplicationSerializer
     
+    def get_queryset(self):
+        # Filter applications to only those belonging to the current user
+        return Application.objects.filter(freelancer=self.request.user)
+    
 class  EmployerApplicationViewSet(viewsets.ModelViewSet):
     permission_classes = [IsEmployerUser]
     renderer_classes = [UserRenderer]
     queryset = Application.objects.all()
     serializer_class = ApplicationSerializer
+    def get_queryset(self):
+        # Filter applications to only those belonging to the current user
+        return Application.objects.filter(employer=self.request.user)
     
 class  AdminApplicationViewSet(viewsets.ModelViewSet):
     

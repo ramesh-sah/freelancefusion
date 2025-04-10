@@ -1,5 +1,7 @@
 import React from 'react';
 import { Briefcase, Globe, Award, Clock, Code, Users, Zap, DollarSign } from 'react-feather';
+import LandingPageNavBar from '../components/LandingPageNavBar';
+
 
 // Reusable Components
 const JobCard = ({ title, type, location, tags, description }) => (
@@ -94,6 +96,10 @@ const CareersPage = () => {
     ];
 
     return (
+
+        <>
+        
+            <LandingPageNavBar />  
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
             <section className="py-20 px-4 bg-gradient-to-r from-gray-900 to-blue-900 text-white">
@@ -187,6 +193,7 @@ const CareersPage = () => {
                 </div>
             </section>
         </div>
+        </>
     );
 };
 

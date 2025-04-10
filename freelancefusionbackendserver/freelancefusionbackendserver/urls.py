@@ -40,10 +40,7 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
-urlpatterns = [
-    # Your existing URL patterns, e.g.:
-   
-]
+
 
 
 urlpatterns = [
@@ -68,6 +65,7 @@ urlpatterns = [
     path('api/',include('chat.urls')),
     path('api/',include('notifications.urls')),
     path('api/',include('organization_setting.urls')),
+    path('khalti/', include('khalti.urls')),
     
     
     

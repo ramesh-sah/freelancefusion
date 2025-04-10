@@ -10,3 +10,10 @@ class AdminProjectCategoryViewSet(viewsets.ModelViewSet):
     renderer_classes = [UserRenderer]
     queryset = ProjectCategory.objects.all()
     serializer_class = ProjectCategorySerializer
+    
+    
+class EmployerProjectCategoryViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsEmployerUser]
+    renderer_classes = [UserRenderer]
+    queryset = ProjectCategory.objects.all()
+    serializer_class = ProjectCategorySerializer

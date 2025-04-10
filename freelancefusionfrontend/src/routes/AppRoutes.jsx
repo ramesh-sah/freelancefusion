@@ -40,6 +40,27 @@ import AdminViewAllPayments from '../pages/admin/AdminViewAllPayments';
 import AdminPendingPayments from '../pages/admin/AdminPendingPayments';
 import AdminApprovedPayment from '../pages/admin/AdminApprovedPayment';
 import AdminNotifications from '../pages/admin/AdminNotifications';
+import AddProject from '../pages/employer/AddProject';
+import ApprovedContracts from '../pages/employer/ApprovedContracts';
+import EmployerViewAllApplications from '../pages/employer/EmployerViewAllApplications';
+import MakePayment from '../pages/employer/MakePayment';
+import Messages from '../pages/employer/Messages';
+import Notifications from '../pages/employer/Notifications';
+import PendingContracts from '../pages/employer/PendingContracts';
+import Review from '../pages/employer/Review';
+import UpdateProfile from '../pages/employer/UpdateProfile';
+import ViewAllContracts from '../pages/employer/ViewAllContracts';
+import ViewAllPayments from '../pages/employer/ViewAllPayments';
+import ViewAllProject from '../pages/employer/ViewAllProject';
+import ViewOwnProfile from '../pages/employer/ViewOwnProfile';
+import FreelancerMessage from '../pages/freelancer/FreelancerMessage';
+import FreelancerApproveContract from '../pages/freelancer/FreelancerApproveContract';
+import FreelancerNotification from '../pages/freelancer/FreelancerNotification';
+import FreelancerSendApplication from '../pages/freelancer/FreelancerSendApplication';
+import FreelancerUpdateProfile from '../pages/freelancer/FreelancerUpdateProfile';
+import FreelancerViewPayments from '../pages/freelancer/FreelancerViewPayments';
+import FreelancerViewAllProject from './../pages/freelancer/FreelancerViewAllProject';
+import FreelancerViewOwnProfile from '../pages/freelancer/FreelancerViewOwnProfile';
 
 
 
@@ -59,7 +80,7 @@ const AppRoutes = () => {
 
                 {/* Admin Layout Routes */}
                 <Route path="/admin" element={<AdminLayout />}>
-                    <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                    {/* <Route path="/admin/dashboard" element={<AdminDashboard />} />
                     <Route path="/admin/add-employer" element={<AdminAddEmployer/>}/>
                     <Route path="/admin/view-employer" element={<AdminViewAllEmployer/>}/>
                     <Route path="/admin/add-freelancer" element={<AdminAddFreelancer />} />
@@ -80,7 +101,7 @@ const AppRoutes = () => {
                     <Route path="/admin/view-payment" element={<AdminViewAllPayments/>}/>
                     <Route path="/admin/pending-payment" element={<AdminPendingPayments/>}/>
                     <Route path="/admin/approved-pyament" element={<AdminApprovedPayment/>}/>
-                    <Route path="/admin/notification" element={<AdminNotifications/>}/>
+                    <Route path="/admin/notification" element={<AdminNotifications/>}/> */}
 
 
 
@@ -89,14 +110,36 @@ const AppRoutes = () => {
 
                 {/* Employer Layout Routes */}
                 <Route path="/employer" element={<EmployerLayout />}>
-                    <Route index element={<EmployerDashboard />} />
-                    {/* Add more employer routes here */}
+                    
+                    <Route path="/employer/dashboard" element={<EmployerDashboard />} />
+                    <Route path="/employer/add-project" element={<AddProject />} />
+                    <Route path="/employer/approved-contracts" element={<ApprovedContracts />} />
+                    <Route path="/employer/employer-view-application" element={<EmployerViewAllApplications/>} />
+                    <Route path="/employer/make-payment" element={<MakePayment/>}/>
+                    <Route path="/employer/messages" element={<Messages/>}/>
+                    <Route path="/employer/notification" element={<Notifications/>}/>
+                    <Route path="/employer/pending-contracts" element={<PendingContracts/>}/>
+                    <Route path="/employer/review" element={<Review/>}/>
+                    <Route path="/employer/update-profile" element={<UpdateProfile/>}/>
+                    <Route path="/employer/view-all-contracts" element={<ViewAllContracts/>}/>
+                    <Route path="/employer/view-all-payments" element={<ViewAllPayments/>}/>
+                    <Route path="/employer/view-all-own-project" element={<ViewAllProject/>}/>
+                    <Route path="/employer/view-own-profile" element={<ViewOwnProfile/>}/>
                 </Route>
 
                 {/* Freelancer Layout Routes */}
                 <Route path="/freelancer" element={<FreelancerLayout />}>
-                    <Route index element={<FreelancerDashboard />} />
-                    {/* Add more freelancer routes here */}
+                  
+                    <Route path="/freelancer/dashboard" element={<FreelancerDashboard />} />
+                    <Route path="/freelancer/messages" element={<FreelancerMessage />} />
+                    <Route path="/freelancer/approved-contracts" element={< FreelancerApproveContract/>} />
+                    <Route path="/freelancer/notification" element={<FreelancerNotification/>}/>
+                    <Route path="/freelancer/send-application" element={<FreelancerSendApplication/>}/>
+                    <Route path="/freelancer/update-profile" element={<FreelancerUpdateProfile/>}/>
+                    <Route path="/freelancer/view-payment" element={<FreelancerViewPayments/>}/>
+                    <Route path="/freelancer/view-all-project" element={<FreelancerViewAllProject/>}/>
+                    <Route path="/freelancer/view-own-profile" element={<FreelancerViewOwnProfile/>}/>
+                 
                 </Route>
 
                 {/* 404 Not Found Route */}

@@ -1,32 +1,26 @@
-# views.py
 import requests
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Payment
 from .serializers import PaymentInitiateSerializer, PaymentStatusSerializer
-from freelancefusionbackendserver.permissions import IsAdminUser, IsEmployerUser, IsFreelancerUser
 
 class PaymentInitiateView(APIView):
     """
-    View to initiate a payment request to Khalti.
+    Initiates a payment request to Khalti.
     """
-
     def post(self, request, *args, **kwargs):
-        # Serialize the payment data
         serializer = PaymentInitiateSerializer(data=request.data)
         if serializer.is_valid():
             payment = serializer.save(status="Initiated")
-            
-            # Khalti API integration
             khalti_url = "https://dev.khalti.com/api/v2/epayment/initiate/"
             headers = {
-                "Authorization": "Key YOUR_LIVE_SECRET_KEY",  # Replace with your secret key
+                "Authorization": "Key YOUR_TEST_SECRET_KEY",  # Use your test secret key here
                 "Content-Type": "application/json",
             }
             payload = {
-                "return_url": "http://example.com/payment/callback/",
-                "website_url": "http://example.com/",
+                "return_url": "http://yourdomain.com/khalti/payment/callback/",
+                "website_url": "http://yourdomain.com/",
                 "amount": payment.amount,
                 "purchase_order_id": payment.purchase_order_id,
                 "purchase_order_name": payment.purchase_order_name,
@@ -36,8 +30,6 @@ class PaymentInitiateView(APIView):
                     "phone": payment.customer_phone,
                 }
             }
-            
-            # Make POST request to Khalti
             response = requests.post(khalti_url, json=payload, headers=headers)
             if response.status_code == 200:
                 response_data = response.json()
@@ -53,21 +45,18 @@ class PaymentInitiateView(APIView):
                     "message": "Failed to initiate payment.",
                     "details": response.json(),
                 }, status=response.status_code)
-
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class PaymentCallbackView(APIView):
     """
-    View to handle the callback from Khalti after a payment.
+    Handles Khalti's callback after payment.
     """
-
     def get(self, request, *args, **kwargs):
         pidx = request.query_params.get("pidx")
         status_khalti = request.query_params.get("status")
         transaction_id = request.query_params.get("transaction_id")
         
-        # Validate payment using pidx
         try:
             payment = Payment.objects.get(pidx=pidx)
         except Payment.DoesNotExist:
@@ -77,7 +66,6 @@ class PaymentCallbackView(APIView):
             payment.status = "Completed"
             payment.transaction_id = transaction_id
             payment.save()
-
             return Response({
                 "message": "Payment successful.",
                 "status": payment.status,
@@ -96,9 +84,8 @@ class PaymentCallbackView(APIView):
 
 class PaymentLookupView(APIView):
     """
-    View to verify the payment status from Khalti using lookup API.
+    Verifies payment status using Khalti's lookup API.
     """
-
     def post(self, request, *args, **kwargs):
         pidx = request.data.get("pidx")
         try:
@@ -106,21 +93,18 @@ class PaymentLookupView(APIView):
         except Payment.DoesNotExist:
             return Response({"message": "Payment not found."}, status=status.HTTP_404_NOT_FOUND)
         
-        # Khalti Lookup API
         khalti_url = "https://dev.khalti.com/api/v2/epayment/lookup/"
         headers = {
-            "Authorization": "Key YOUR_LIVE_SECRET_KEY",  # Replace with your secret key
+            "Authorization": "Key YOUR_TEST_SECRET_KEY",  # Replace with your test secret key
             "Content-Type": "application/json",
         }
         payload = {"pidx": payment.pidx}
-        
         response = requests.post(khalti_url, json=payload, headers=headers)
         if response.status_code == 200:
             response_data = response.json()
             payment.status = response_data.get("status")
             payment.transaction_id = response_data.get("transaction_id")
             payment.save()
-
             return Response({
                 "message": "Payment status verified.",
                 "status": payment.status,

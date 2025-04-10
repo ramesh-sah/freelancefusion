@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaUser, FaEnvelope, FaEye, FaEyeSlash, FaLock } from "react-icons/fa";
 import CustomUserRegisterService from './../services/CustomUserService/CustomUserRegisterService';
 import {  Link,  useNavigate } from "react-router-dom";
-
+import logo from '../assets/image.png';
 const Register = () => {
     const [formData, setFormData] = useState({
         full_name: "",
@@ -72,7 +72,7 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen  mt-15 bg-gradient-to-br from-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                     <div className="grid md:grid-cols-2 gap-6">
@@ -80,9 +80,9 @@ const Register = () => {
                         <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 text-white flex flex-col justify-center">
                             <div className="mb-8">
                                 <img
-                                    src="https://images.unsplash.com/photo-1560179707-f14e90ef3623"
+                                    src={logo}
                                     alt="FreelanceFusion Logo"
-                                    className="w-48 mx-auto mb-6"
+                                    className="w-48 mx-auto mb-6 rounded-2xl"
                                 />
                                 <h2 className="text-3xl font-bold text-center mb-4">Welcome to FreelanceFusion</h2>
                                 <p className="text-blue-100 text-center">
@@ -138,7 +138,7 @@ const Register = () => {
                                         <option value="">Select user type</option>
                                         <option value="freelancer">Freelancer</option>
                                         <option value="employer">Employer</option>
-                                        <option value="admin">Admin</option>
+                                       
                                     </select>
                                     {errors.user_type && <p className="mt-1 text-sm text-red-600">{errors.user_type}</p>}
                                 </div>

@@ -16,6 +16,9 @@ class FreelancerProjectReviewViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         # Optionally, handle review creation logic, such as restricting reviews to only completed projects
         serializer.save()
+    def get_queryset(self):
+        # Filter applications to only those belonging to the current user
+        return ProjectReview.objects.filter(freelancer=self.request.user)
         
         
 class EmployerProjectReviewViewSet(viewsets.ModelViewSet):
@@ -28,6 +31,10 @@ class EmployerProjectReviewViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         # Optionally, handle review creation logic, such as restricting reviews to only completed projects
         serializer.save()
+        
+    def get_queryset(self):
+        # Filter applications to only those belonging to the current user
+        return ProjectReview.objects.filter(employer=self.request.user)
         
 
 class AdminProjectReviewViewSet(viewsets.ModelViewSet):

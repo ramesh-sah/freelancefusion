@@ -40,7 +40,7 @@ class Application(models.Model):
     is_shortlisted = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.freelancer.username} - {self.project.title}"
+        return f" {self.project.title}"
 
     class Meta:
         unique_together = ('project', 'freelancer')  # Ensure a freelancer applies to a project only once.

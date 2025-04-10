@@ -4,11 +4,13 @@ from .models import Contract
 from .serializers import ContractSerializer
 from freelancefusionbackendserver.permissions import IsAdminUser, IsEmployerUser, IsFreelancerUser
 from freelancefusionbackendserver.renderers import UserRenderer
+from django_filters.rest_framework import DjangoFilterBackend
 class FreelancerContractViewSet(viewsets.ModelViewSet):
     permission_classes = [IsFreelancerUser]
     renderer_classes = [UserRenderer]
     
     queryset = Contract.objects.all()
+    
     serializer_class = ContractSerializer
     # permission_classes = [IsAuthenticated]
 
@@ -30,6 +32,9 @@ class FreelancerContractViewSet(viewsets.ModelViewSet):
     #     Automatically set the employer when creating a contract.
     #     """
     #     serializer.save(employer=self.request.user)
+    def get_queryset(self):
+        # Filter applications to only those belonging to the current user
+        return Contract.objects.filter(freelancer=self.request.user)
     
     
 class EmployerContractViewSet(viewsets.ModelViewSet):
@@ -37,6 +42,11 @@ class EmployerContractViewSet(viewsets.ModelViewSet):
     renderer_classes = [UserRenderer]
     queryset = Contract.objects.all()
     serializer_class = ContractSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['status']
+    def get_queryset(self):
+        # Filter applications to only those belonging to the current user
+        return Contract.objects.filter(employer=self.request.user)
     
 class AdminContractViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAdminUser]
