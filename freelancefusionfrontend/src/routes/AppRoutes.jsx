@@ -80,7 +80,7 @@ const AppRoutes = () => {
 
                 {/* Admin Layout Routes */}
                 <Route path="/admin" element={<AdminLayout />}>
-                    {/* <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                    <Route path="/admin/dashboard" element={<AdminDashboard />} />
                     <Route path="/admin/add-employer" element={<AdminAddEmployer/>}/>
                     <Route path="/admin/view-employer" element={<AdminViewAllEmployer/>}/>
                     <Route path="/admin/add-freelancer" element={<AdminAddFreelancer />} />
@@ -101,7 +101,7 @@ const AppRoutes = () => {
                     <Route path="/admin/view-payment" element={<AdminViewAllPayments/>}/>
                     <Route path="/admin/pending-payment" element={<AdminPendingPayments/>}/>
                     <Route path="/admin/approved-pyament" element={<AdminApprovedPayment/>}/>
-                    <Route path="/admin/notification" element={<AdminNotifications/>}/> */}
+                    <Route path="/admin/notification" element={<AdminNotifications/>}/>
 
 
 

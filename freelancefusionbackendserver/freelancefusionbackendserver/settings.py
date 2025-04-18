@@ -185,9 +185,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
 
+
 # Media files configuration
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 
 AUTH_USER_MODEL = 'account.CustomUser'
 
@@ -198,7 +200,7 @@ AUTH_USER_MODEL = 'account.CustomUser'
 STATIC_URL = '/static/'  # URL to access static files
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Location of static files
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # For collecting static files during deployment
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_REDIRECT_URL = '/'
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -211,3 +213,90 @@ DEPLOYER_PRIVATE_KEY = "0x07cc5e1518ec2287ae5424049b38cbd0d2e84bae31282406a86fc6
 WEB3_CHAIN_ID = 1337  # Ganache default
 KHALTI_SECRET_KEY = "key live_secret_key_68791341fdd94846a146f0457ff7b455"
 KHALTI_VERIFY_URL = "https://khalti.com/api/v2/payment/verify/"
+
+
+
+
+# Admin Material Dashboard specific settings
+MATERIAL_ADMIN_SITE = {
+    # Branding & Appearance
+    'HEADER': 'Your Company Admin',  # Admin site header
+    'TITLE': 'Your Company Administration',  # Admin site title
+    'FAVICON': 'img/favicon.png',  # Path from static files
+    'LOGO': 'img/admin-logo.png',  # Main admin logo
+    'LOGIN_LOGO': 'img/login-logo.png',  # Login screen logo (400x400px)
+    'LOGOUT_BG': 'img/logout-bg.jpg',  # Logout background image
+    
+    # Color Scheme
+    'MAIN_BG_COLOR': '#2a3042',  # Primary background color
+    'MAIN_HOVER_COLOR': '#1a1f2d',  # Hover state color
+    'NAVBAR_COLOR': '#1a1f2d',  # Navigation bar color
+    'SIDEBAR_COLOR': '#2a3042',  # Sidebar background color
+    'BUTTON_COLOR': '#4CAF50',  # Primary action button color
+    'ACCENT_COLOR': '#FF4081',  # Highlight color for important elements
+    'ALERT_COLOR': '#F44336',  # Warning/alert color
+    
+    # Layout Customization
+    'SHOW_THEMES': True,  # Enable theme switcher
+    'TRAY_REVERSE': True,  # Reverse side tray position
+    'NAVBAR_REVERSE': True,  # Reverse navbar position
+    'FIXED_HEADER': True,  # Fixed position header
+    'FIXED_SIDEBAR': True,  # Fixed position sidebar
+    'BOXED_LAYOUT': False,  # Boxed page layout
+    'COLLAPSE_SIDEBAR': True,  # Collapsible sidebar
+    'MENU_ICON_COLLECTION': 'material-icons',  # Icon library
+    
+    # Content Display
+    'SHOW_COUNTS': True,  # Show model counts
+    'LIST_PER_PAGE': 25,  # Items per page in list views
+    'MAX_ACTION_BUTTONS': 3,  # Max buttons in action row
+    'CHART_REFRESH': 300,  # Dashboard chart refresh rate (seconds)
+    
+    # User Interface
+    'PROFILE_PICTURE': 'img/admin-avatar.png',  # Admin avatar
+    'PROFILE_BG': 'img/profile-bg.jpg',  # Profile background
+    'SHOW_MENU_ICONS': True,  # Show icons in side menu
+    'MENU_HOVER': 'dark',  # Menu hover style (light/dark)
+    'MENU_OPEN_ON_HOVER': True,  # Open submenus on hover
+    'MENU_SEARCH': True,  # Enable menu search
+    
+    # Custom Components
+    'CUSTOM_LINKS': [
+        {
+            'name': 'Company Dashboard',
+            'url': '/dashboard/',
+            'icon': 'dashboard',
+            'permissions': ['auth.view_user']
+        },
+        {
+            'name': 'Support Center',
+            'url': 'https://support.example.com',
+            'icon': 'help',
+            'new_window': True
+        }
+    ],
+    
+    # Advanced Configuration
+    'THEME_PATH': 'admin/css/themes/',  # Custom themes directory
+    'EXTRA_HEADERS': {
+        'X-Frame-Options': 'SAMEORIGIN',
+        'Content-Security-Policy': "default-src 'self'"
+    },
+    
+    # Notification System
+    'NOTIFICATIONS': {
+        'ENABLED': True,
+        'POLLING': 60,  # Seconds between checks
+        'MAX_COUNT': 10,  # Max notifications to show
+        'STORAGE': 'local'  # local/session/database
+    },
+    
+    # Branding Visibility
+    'FOOTER_BRANDING': True,  # Show "Powered by" footer
+    'COPYRIGHT_TEXT': '© 2024 Your Company. All rights reserved.',
+    
+    # Security Features
+    'MASK_CREDENTIALS': True,  # Mask sensitive fields
+    'SESSION_TIMEOUT': 3600,  # Inactivity timeout (seconds)
+    'PASSWORD_STRENGTH': 3,  # 1-4 (Minimum password strength)
+}

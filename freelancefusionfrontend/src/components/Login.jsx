@@ -57,10 +57,10 @@ export default function Login() {
         navigate("/admin/");
       
       }else if (response.user_type==="employer"){
-        navigate("/employer/");
+        navigate("/employer/dashboard");
       }
       else if (response.user_type==="freelancer"){
-        navigate("/freelancer/")
+        navigate("/freelancer/dashboard")
       }
       else{
         navigate("/register/")

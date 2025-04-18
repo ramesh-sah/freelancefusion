@@ -232,68 +232,84 @@ const FreelancerLayout = () => {
                     <div className="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300">
                         <nav className="hs-accordion-group p-3 w-full flex flex-col flex-wrap" data-hs-accordion-always-open>
                             <ul className="flex flex-col space-y-1">
+                                {/* All Projects */}
+
                                 <li>
-                                    <Link className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100" to="/freelancer/dashboard">
+                                    <Link className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-md font-semibold text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100" to="/freelancer/dashboard">
                                         <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
                                         Dashboard
                                     </Link>
                                 </li>
-
-
-
                                 <li>
                                     <Link
-                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                        to="/freelancer/add-project"
+                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-md font-semibold text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
+                                        to="/freelancer/view-all-project"
                                     >
+                                        {/* Briefcase Icon */}
                                         <svg
                                             className="shrink-0 h-6 w-6"
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
-                                            stroke="currentColor"
                                             viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" strokeWidth="2" />
+                                            <path d="M16 3h-8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                        All Projects
+                                    </Link>
+                                </li>
+                               
+
+                                
+
+
+
+                               
+
+
+
+
+                              
+                               
+                                
+
+                               
+
+                                {/* All Applications */}
+                                <li>
+                                    <Link
+                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-md font-semibold text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
+                                        to="/freelancer/send-application"
+                                    >
+                                        {/* Clipboard List Icon */}
+                                        <svg
+                                            className="shrink-0 h-6 w-6"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
                                         >
                                             <path
+                                                d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"
+                                                strokeWidth="2"
                                                 strokeLinecap="round"
                                                 strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M12 4v16m8-8H4"
                                             />
+                                            <rect x="9" y="3" width="6" height="4" rx="1" ry="1" strokeWidth="2" />
+                                            <path d="M9 11h6M9 15h6" strokeWidth="2" strokeLinecap="round" />
                                         </svg>
-                                        Add Project
+                                        Send Applications
                                     </Link>
                                 </li>
 
-
-
-                                {/* Pending Payment */}
+                                {/* Approved Contracts */}
                                 <li>
                                     <Link
-                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                        to="/freelancer/make-payment"
+                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-md font-semibold text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
+                                        to="/freelancer/approved-contracts"
                                     >
-                                        {/* Credit Card Icon */}
-                                        <svg
-                                            className="shrink-0 h-6 w-6"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2" strokeWidth="2" />
-                                            <path d="M1 10h22" strokeWidth="2" />
-                                        </svg>
-                                        Pending Payment
-                                    </Link>
-                                </li>
-
-                                {/* Pending Contracts */}
-                                <li>
-                                    <Link
-                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                        to="/freelancer/pending-contracts"
-                                    >
-                                        {/* Clock Icon */}
+                                        {/* Check Circle Icon */}
                                         <svg
                                             className="shrink-0 h-6 w-6"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -302,42 +318,17 @@ const FreelancerLayout = () => {
                                             stroke="currentColor"
                                         >
                                             <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                                            <path d="M12 6v6l4 2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M9 12l2 2 4-4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
-                                        Pending Contracts
-                                    </Link>
-                                </li>
-
-                                {/* View All Contracts */}
-                                <li>
-                                    <Link
-                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                        to="/freelancer/view-all-contracts"
-                                    >
-                                        {/* Folder Icon */}
-                                        <svg
-                                            className="shrink-0 h-6 w-6"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                        View All Contracts
+                                        Approved Contracts
                                     </Link>
                                 </li>
 
                                 {/* View All Payments */}
                                 <li>
                                     <Link
-                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                        to="/freelancer/view-all-payments"
+                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-md font-semibold text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
+                                        to="/freelancer/view-payment"
                                     >
                                         {/* Currency Dollar Icon */}
                                         <svg
@@ -359,79 +350,10 @@ const FreelancerLayout = () => {
                                     </Link>
                                 </li>
 
-                                {/* All Projects */}
-                                <li>
-                                    <Link
-                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                        to="/freelancer/view-all-own-project"
-                                    >
-                                        {/* Briefcase Icon */}
-                                        <svg
-                                            className="shrink-0 h-6 w-6"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" strokeWidth="2" />
-                                            <path d="M16 3h-8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
-                                        All Projects
-                                    </Link>
-                                </li>
-
-                                {/* All Applications */}
-                                <li>
-                                    <Link
-                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                        to="/freelancer/freelancer-view-application"
-                                    >
-                                        {/* Clipboard List Icon */}
-                                        <svg
-                                            className="shrink-0 h-6 w-6"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                            <rect x="9" y="3" width="6" height="4" rx="1" ry="1" strokeWidth="2" />
-                                            <path d="M9 11h6M9 15h6" strokeWidth="2" strokeLinecap="round" />
-                                        </svg>
-                                        All Applications
-                                    </Link>
-                                </li>
-
-                                {/* Approved Contracts */}
-                                <li>
-                                    <Link
-                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                        to="/freelancer/approved-contracts"
-                                    >
-                                        {/* Check Circle Icon */}
-                                        <svg
-                                            className="shrink-0 h-6 w-6"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                                            <path d="M9 12l2 2 4-4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
-                                        Approved Contracts
-                                    </Link>
-                                </li>
-
                                 {/* Chat */}
                                 <li>
                                     <Link
-                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
+                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-md font-semibold text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
                                         to="/freelancer/messages"
                                     >
                                         {/* Chat Bubble Icon */}
@@ -453,30 +375,7 @@ const FreelancerLayout = () => {
                                     </Link>
                                 </li>
 
-                                {/* Review */}
-                                <li>
-                                    <Link
-                                        className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                        to="/freelancer/review"
-                                    >
-                                        {/* Star Icon */}
-                                        <svg
-                                            className="shrink-0 h-6 w-6"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 0 0 .95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 0 0-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.538 1.118l-3.37-2.448a1 1 0 0 0-1.175 0l-3.37 2.448c-.783.57-1.838-.197-1.538-1.118l1.287-3.957a1 1 0 0 0-.364-1.118L2.01 9.384c-.783-.57-.38-1.81.588-1.81h4.163a1 1 0 0 0 .95-.69l1.286-3.957z"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                        Review
-                                    </Link>
-                                </li>
+                                
                             </ul>
                         </nav>
                     </div>

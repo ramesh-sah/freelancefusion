@@ -1,0 +1,4291 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Your API Title",
+    "description": "API documentation for your Django project.",
+    "termsOfService": "https://www.yourwebsite.com/terms/",
+    "contact": {
+      "email": "contact@yourwebsite.com"
+    },
+    "license": {
+      "name": "BSD License"
+    },
+    "version": "v1"
+  },
+  "host": "127.0.0.1:8000",
+  "schemes": ["http"],
+  "basePath": "/",
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "securityDefinitions": {
+    "Basic": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "Basic": []
+    }
+  ],
+  "paths": {
+    "/api/admin-applications/": {
+      "get": {
+        "operationId": "api_admin-applications_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Application"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_admin-applications_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/admin-applications/{id}/": {
+      "get": {
+        "operationId": "api_admin-applications_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_admin-applications_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_admin-applications_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_admin-applications_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this application.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/admin-contracts/": {
+      "get": {
+        "operationId": "api_admin-contracts_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Contract"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_admin-contracts_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/admin-contracts/{id}/": {
+      "get": {
+        "operationId": "api_admin-contracts_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_admin-contracts_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_admin-contracts_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_admin-contracts_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this contract.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/admin-freelanceorganizationsettings/": {
+      "get": {
+        "operationId": "api_admin-freelanceorganizationsettings_list",
+        "description": "API endpoint that allows freelance-specific organization settings to be viewed or edited.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FreelanceOrganizationSetting"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_admin-freelanceorganizationsettings_create",
+        "description": "API endpoint that allows freelance-specific organization settings to be viewed or edited.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FreelanceOrganizationSetting"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FreelanceOrganizationSetting"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/admin-freelanceorganizationsettings/{id}/": {
+      "get": {
+        "operationId": "api_admin-freelanceorganizationsettings_read",
+        "description": "API endpoint that allows freelance-specific organization settings to be viewed or edited.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FreelanceOrganizationSetting"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_admin-freelanceorganizationsettings_update",
+        "description": "API endpoint that allows freelance-specific organization settings to be viewed or edited.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FreelanceOrganizationSetting"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FreelanceOrganizationSetting"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_admin-freelanceorganizationsettings_partial_update",
+        "description": "API endpoint that allows freelance-specific organization settings to be viewed or edited.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FreelanceOrganizationSetting"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FreelanceOrganizationSetting"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_admin-freelanceorganizationsettings_delete",
+        "description": "API endpoint that allows freelance-specific organization settings to be viewed or edited.",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this freelance organization setting.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/admin-messages/": {
+      "get": {
+        "operationId": "api_admin-messages_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Message"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_admin-messages_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/admin-messages/{id}/": {
+      "get": {
+        "operationId": "api_admin-messages_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_admin-messages_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_admin-messages_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_admin-messages_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this message.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/admin-notifications/": {
+      "get": {
+        "operationId": "api_admin-notifications_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Notification"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_admin-notifications_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/admin-notifications/{id}/": {
+      "get": {
+        "operationId": "api_admin-notifications_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_admin-notifications_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_admin-notifications_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_admin-notifications_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this notification.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/admin-organizationsettings/": {
+      "get": {
+        "operationId": "api_admin-organizationsettings_list",
+        "description": "API endpoint that allows organization settings to be viewed or edited.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OrganizationSetting"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_admin-organizationsettings_create",
+        "description": "API endpoint that allows organization settings to be viewed or edited.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrganizationSetting"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OrganizationSetting"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/admin-organizationsettings/{id}/": {
+      "get": {
+        "operationId": "api_admin-organizationsettings_read",
+        "description": "API endpoint that allows organization settings to be viewed or edited.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OrganizationSetting"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_admin-organizationsettings_update",
+        "description": "API endpoint that allows organization settings to be viewed or edited.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrganizationSetting"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OrganizationSetting"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_admin-organizationsettings_partial_update",
+        "description": "API endpoint that allows organization settings to be viewed or edited.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrganizationSetting"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OrganizationSetting"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_admin-organizationsettings_delete",
+        "description": "API endpoint that allows organization settings to be viewed or edited.",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this organization setting.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/admin-projectcategories/": {
+      "get": {
+        "operationId": "api_admin-projectcategories_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProjectCategory"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_admin-projectcategories_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/admin-projectcategories/{id}/": {
+      "get": {
+        "operationId": "api_admin-projectcategories_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_admin-projectcategories_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_admin-projectcategories_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_admin-projectcategories_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this project category.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/admin-projects/": {
+      "get": {
+        "operationId": "api_admin-projects_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Project"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_admin-projects_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/admin-projects/{id}/": {
+      "get": {
+        "operationId": "api_admin-projects_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_admin-projects_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_admin-projects_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_admin-projects_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this project.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/admin-register-user/": {
+      "post": {
+        "operationId": "api_admin-register-user_create",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/admin-reviews/": {
+      "get": {
+        "operationId": "api_admin-reviews_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProjectReview"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_admin-reviews_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/admin-reviews/{id}/": {
+      "get": {
+        "operationId": "api_admin-reviews_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_admin-reviews_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_admin-reviews_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_admin-reviews_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this project review.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/changePassword/": {
+      "post": {
+        "operationId": "api_changePassword_create",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/employer-applications/": {
+      "get": {
+        "operationId": "api_employer-applications_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Application"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_employer-applications_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/employer-applications/{id}/": {
+      "get": {
+        "operationId": "api_employer-applications_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_employer-applications_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_employer-applications_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_employer-applications_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this application.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/employer-contracts/": {
+      "get": {
+        "operationId": "api_employer-contracts_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Contract"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_employer-contracts_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/employer-contracts/{id}/": {
+      "get": {
+        "operationId": "api_employer-contracts_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_employer-contracts_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_employer-contracts_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_employer-contracts_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this contract.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/employer-messages/": {
+      "get": {
+        "operationId": "api_employer-messages_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Message"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_employer-messages_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/employer-messages/{id}/": {
+      "get": {
+        "operationId": "api_employer-messages_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_employer-messages_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_employer-messages_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_employer-messages_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this message.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/employer-notifications/": {
+      "get": {
+        "operationId": "api_employer-notifications_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Notification"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_employer-notifications_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/employer-notifications/{id}/": {
+      "get": {
+        "operationId": "api_employer-notifications_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_employer-notifications_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_employer-notifications_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_employer-notifications_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this notification.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/employer-projectcategories/": {
+      "get": {
+        "operationId": "api_employer-projectcategories_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProjectCategory"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_employer-projectcategories_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/employer-projectcategories/{id}/": {
+      "get": {
+        "operationId": "api_employer-projectcategories_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_employer-projectcategories_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_employer-projectcategories_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectCategory"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_employer-projectcategories_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this project category.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/employer-projects/": {
+      "get": {
+        "operationId": "api_employer-projects_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Project"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_employer-projects_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/employer-projects/{id}/": {
+      "get": {
+        "operationId": "api_employer-projects_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_employer-projects_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_employer-projects_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_employer-projects_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this project.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/employer-reviews/": {
+      "get": {
+        "operationId": "api_employer-reviews_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProjectReview"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_employer-reviews_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/employer-reviews/{id}/": {
+      "get": {
+        "operationId": "api_employer-reviews_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_employer-reviews_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_employer-reviews_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_employer-reviews_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this project review.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/freelancer-applications/": {
+      "get": {
+        "operationId": "api_freelancer-applications_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Application"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_freelancer-applications_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/freelancer-applications/{id}/": {
+      "get": {
+        "operationId": "api_freelancer-applications_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_freelancer-applications_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_freelancer-applications_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_freelancer-applications_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this application.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/freelancer-contracts/": {
+      "get": {
+        "operationId": "api_freelancer-contracts_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Contract"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_freelancer-contracts_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/freelancer-contracts/{id}/": {
+      "get": {
+        "operationId": "api_freelancer-contracts_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_freelancer-contracts_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_freelancer-contracts_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_freelancer-contracts_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this contract.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/freelancer-messages/": {
+      "get": {
+        "operationId": "api_freelancer-messages_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Message"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_freelancer-messages_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/freelancer-messages/{id}/": {
+      "get": {
+        "operationId": "api_freelancer-messages_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_freelancer-messages_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_freelancer-messages_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_freelancer-messages_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this message.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/freelancer-notifications/": {
+      "get": {
+        "operationId": "api_freelancer-notifications_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Notification"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_freelancer-notifications_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/freelancer-notifications/{id}/": {
+      "get": {
+        "operationId": "api_freelancer-notifications_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_freelancer-notifications_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_freelancer-notifications_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_freelancer-notifications_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this notification.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/freelancer-projects/": {
+      "get": {
+        "operationId": "api_freelancer-projects_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Project"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_freelancer-projects_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/freelancer-projects/{id}/": {
+      "get": {
+        "operationId": "api_freelancer-projects_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_freelancer-projects_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_freelancer-projects_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Project"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_freelancer-projects_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this project.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/freelancer-reviews/": {
+      "get": {
+        "operationId": "api_freelancer-reviews_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProjectReview"
+              }
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "post": {
+        "operationId": "api_freelancer-reviews_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/freelancer-reviews/{id}/": {
+      "get": {
+        "operationId": "api_freelancer-reviews_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "put": {
+        "operationId": "api_freelancer-reviews_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_freelancer-reviews_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectReview"
+            }
+          }
+        },
+        "tags": ["api"]
+      },
+      "delete": {
+        "operationId": "api_freelancer-reviews_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this project review.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/api/login/": {
+      "post": {
+        "operationId": "api_login_create",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/payment/callback/": {
+      "get": {
+        "operationId": "api_payment_callback_list",
+        "description": "Handles Khalti's callback after payment.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/payment/initiate/": {
+      "post": {
+        "operationId": "api_payment_initiate_create",
+        "description": "Initiates a payment request to Khalti.",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/payment/lookup/": {
+      "post": {
+        "operationId": "api_payment_lookup_create",
+        "description": "Verifies payment status using Khalti's lookup API.",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/profile/": {
+      "get": {
+        "operationId": "api_profile_list",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "patch": {
+        "operationId": "api_profile_partial_update",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/register/": {
+      "post": {
+        "operationId": "api_register_create",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/api/reset-password/{uid}/{token}/": {
+      "post": {
+        "operationId": "api_reset-password_create",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": [
+        {
+          "name": "uid",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "token",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ]
+    },
+    "/api/send-reset-password-email/": {
+      "post": {
+        "operationId": "api_send-reset-password-email_create",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["api"]
+      },
+      "parameters": []
+    },
+    "/khalti/verifypayment/": {
+      "post": {
+        "operationId": "khalti_verifypayment_create",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": ["khalti"]
+      },
+      "parameters": []
+    }
+  },
+  "definitions": {
+    "Application": {
+      "required": ["project", "freelancer", "bid_amount", "proposal_text"],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "project": {
+          "title": "Project",
+          "type": "integer"
+        },
+        "freelancer": {
+          "title": "Freelancer",
+          "type": "integer"
+        },
+        "bid_amount": {
+          "title": "Bid amount",
+          "type": "string",
+          "format": "decimal"
+        },
+        "proposal_text": {
+          "title": "Proposal text",
+          "type": "string",
+          "minLength": 1
+        },
+        "attachments": {
+          "title": "Attachments",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string",
+          "enum": ["pending", "accepted", "rejected", "withdrawn", "reviewing"]
+        },
+        "created_at": {
+          "title": "Created at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "updated_at": {
+          "title": "Updated at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "estimated_completion_time": {
+          "title": "Estimated completion time",
+          "description": "Estimated completion time in days.",
+          "type": "integer",
+          "maximum": 2147483647,
+          "minimum": 0,
+          "x-nullable": true
+        },
+        "freelancer_rating": {
+          "title": "Freelancer rating",
+          "description": "Rating out of 5 for the freelancer's work.",
+          "type": "number",
+          "maximum": 5,
+          "minimum": 0,
+          "x-nullable": true
+        },
+        "employer_feedback": {
+          "title": "Employer feedback",
+          "description": "Feedback from the employer.",
+          "type": "string",
+          "x-nullable": true
+        },
+        "is_shortlisted": {
+          "title": "Is shortlisted",
+          "type": "boolean"
+        }
+      }
+    },
+    "Contract": {
+      "required": [
+        "project",
+        "freelancer",
+        "employer",
+        "agreed_amount",
+        "start_date",
+        "terms_and_conditions"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "project": {
+          "title": "Project",
+          "type": "integer"
+        },
+        "freelancer": {
+          "title": "Freelancer",
+          "type": "integer"
+        },
+        "employer": {
+          "title": "Employer",
+          "type": "integer"
+        },
+        "agreed_amount": {
+          "title": "Agreed amount",
+          "description": "The amount agreed upon for this contract.",
+          "type": "string",
+          "format": "decimal"
+        },
+        "start_date": {
+          "title": "Start date",
+          "description": "The date when the contract starts.",
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "title": "End date",
+          "description": "The date when the contract ends.",
+          "type": "string",
+          "format": "date",
+          "x-nullable": true
+        },
+        "status": {
+          "title": "Status",
+          "type": "string",
+          "enum": ["ongoing", "completed", "cancelled"]
+        },
+        "created_at": {
+          "title": "Created at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "updated_at": {
+          "title": "Updated at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "payment_status": {
+          "title": "Payment status",
+          "type": "string",
+          "enum": ["pending", "paid", "partially_paid"]
+        },
+        "terms_and_conditions": {
+          "title": "Terms and conditions",
+          "description": "Terms and conditions for the contract.",
+          "type": "string",
+          "minLength": 1
+        },
+        "employer_feedback": {
+          "title": "Employer feedback",
+          "description": "Feedback provided by the employer.",
+          "type": "string",
+          "x-nullable": true
+        },
+        "freelancer_feedback": {
+          "title": "Freelancer feedback",
+          "description": "Feedback provided by the freelancer.",
+          "type": "string",
+          "x-nullable": true
+        },
+        "employer_rating": {
+          "title": "Employer rating",
+          "description": "Rating given by the freelancer for the employer (out of 5).",
+          "type": "number",
+          "maximum": 5,
+          "minimum": 0,
+          "x-nullable": true
+        },
+        "freelancer_rating": {
+          "title": "Freelancer rating",
+          "description": "Rating given by the employer for the freelancer (out of 5).",
+          "type": "number",
+          "maximum": 5,
+          "minimum": 0,
+          "x-nullable": true
+        },
+        "is_disputed": {
+          "title": "Is disputed",
+          "description": "Indicates whether the contract is in dispute.",
+          "type": "boolean"
+        }
+      }
+    },
+    "FreelanceOrganizationSetting": {
+      "required": ["name"],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Organization Name",
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1
+        },
+        "about_us": {
+          "title": "About us",
+          "description": "Description about the organization",
+          "type": "string",
+          "maxLength": 2000,
+          "x-nullable": true
+        },
+        "terms_and_conditions": {
+          "title": "Terms and conditions",
+          "type": "string",
+          "maxLength": 2000,
+          "x-nullable": true
+        },
+        "logo": {
+          "title": "Logo",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "contact_email": {
+          "title": "Contact email",
+          "type": "string",
+          "format": "email",
+          "maxLength": 254,
+          "x-nullable": true
+        },
+        "contact_phone": {
+          "title": "Contact phone",
+          "type": "string",
+          "maxLength": 20,
+          "x-nullable": true
+        },
+        "address": {
+          "title": "Address",
+          "type": "string",
+          "maxLength": 500,
+          "x-nullable": true
+        },
+        "social_media_links": {
+          "title": "Social media links",
+          "type": "object",
+          "x-nullable": true
+        },
+        "privacy_policy": {
+          "title": "Privacy policy",
+          "type": "string",
+          "maxLength": 2000,
+          "x-nullable": true
+        },
+        "is_active": {
+          "title": "Is active",
+          "type": "boolean"
+        },
+        "is_verified": {
+          "title": "Is verified",
+          "type": "boolean"
+        },
+        "organization_type": {
+          "title": "Organization type",
+          "type": "string",
+          "enum": ["nonprofit", "corporation", "startup"],
+          "x-nullable": true
+        },
+        "mission_statement": {
+          "title": "Mission statement",
+          "type": "string",
+          "maxLength": 1000,
+          "x-nullable": true
+        },
+        "vision_statement": {
+          "title": "Vision statement",
+          "type": "string",
+          "maxLength": 1000,
+          "x-nullable": true
+        },
+        "founding_year": {
+          "title": "Founding year",
+          "type": "integer",
+          "maximum": 2147483647,
+          "minimum": 1900,
+          "x-nullable": true
+        },
+        "registration_number": {
+          "title": "Registration number",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "vat_number": {
+          "title": "Vat number",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "contact_preference": {
+          "title": "Contact preference",
+          "type": "string",
+          "enum": ["email", "phone", "none"]
+        },
+        "payment_terms": {
+          "title": "Payment terms",
+          "type": "string",
+          "maxLength": 2000,
+          "x-nullable": true
+        },
+        "currency": {
+          "title": "Currency",
+          "type": "string",
+          "maxLength": 10,
+          "x-nullable": true
+        },
+        "invoice_template": {
+          "title": "Invoice template",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "default_language": {
+          "title": "Default language",
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 1
+        },
+        "supported_languages": {
+          "title": "Supported languages",
+          "type": "object",
+          "x-nullable": true
+        },
+        "operational_region": {
+          "title": "Operational region",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "legal_compliance": {
+          "title": "Legal compliance",
+          "type": "string",
+          "maxLength": 3000,
+          "x-nullable": true
+        },
+        "insurance_provider": {
+          "title": "Insurance provider",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "business_hours": {
+          "title": "Business hours",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "is_featured": {
+          "title": "Is featured",
+          "type": "boolean"
+        },
+        "customer_support_email": {
+          "title": "Customer support email",
+          "type": "string",
+          "format": "email",
+          "maxLength": 254,
+          "x-nullable": true
+        },
+        "customer_support_phone": {
+          "title": "Customer support phone",
+          "type": "string",
+          "maxLength": 20,
+          "x-nullable": true
+        },
+        "theme_color": {
+          "title": "Theme color",
+          "description": "Hex color code for theme",
+          "type": "string",
+          "maxLength": 7,
+          "x-nullable": true
+        },
+        "branding_font": {
+          "title": "Branding font",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "banner_image": {
+          "title": "Banner image",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "favicon": {
+          "title": "Favicon",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "tax_exemption_status": {
+          "title": "Tax exemption status",
+          "type": "boolean"
+        },
+        "legal_address": {
+          "title": "Legal address",
+          "type": "string",
+          "maxLength": 500,
+          "x-nullable": true
+        },
+        "tax_registration_number": {
+          "title": "Tax registration number",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "notification_preferences": {
+          "title": "Notification preferences",
+          "type": "object",
+          "x-nullable": true
+        },
+        "email_notifications_enabled": {
+          "title": "Email notifications enabled",
+          "type": "boolean"
+        },
+        "sms_notifications_enabled": {
+          "title": "Sms notifications enabled",
+          "type": "boolean"
+        },
+        "subscription_plan": {
+          "title": "Subscription plan",
+          "type": "string",
+          "maxLength": 50,
+          "x-nullable": true
+        },
+        "plan_expiration_date": {
+          "title": "Plan expiration date",
+          "type": "string",
+          "format": "date",
+          "x-nullable": true
+        },
+        "billing_address": {
+          "title": "Billing address",
+          "type": "string",
+          "maxLength": 500,
+          "x-nullable": true
+        },
+        "payment_gateway_info": {
+          "title": "Payment gateway info",
+          "type": "object",
+          "x-nullable": true
+        },
+        "two_factor_authentication_enabled": {
+          "title": "Two factor authentication enabled",
+          "type": "boolean"
+        },
+        "password_expiry_days": {
+          "title": "Password expiry days",
+          "type": "integer",
+          "maximum": 2147483647,
+          "minimum": 0
+        },
+        "employee_count": {
+          "title": "Employee count",
+          "type": "integer",
+          "maximum": 2147483647,
+          "minimum": 0,
+          "x-nullable": true
+        },
+        "vacation_policy": {
+          "title": "Vacation policy",
+          "type": "string",
+          "x-nullable": true
+        },
+        "employee_benefits": {
+          "title": "Employee benefits",
+          "type": "string",
+          "x-nullable": true
+        },
+        "organizational_structure": {
+          "title": "Organizational structure",
+          "type": "object",
+          "x-nullable": true
+        },
+        "internal_comms_tool": {
+          "title": "Internal comms tool",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "project_management_tool": {
+          "title": "Project management tool",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "task_automation_tools": {
+          "title": "Task automation tools",
+          "type": "object",
+          "x-nullable": true
+        },
+        "default_time_zone": {
+          "title": "Default time zone",
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 1
+        },
+        "date_format": {
+          "title": "Date format",
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 1
+        },
+        "currency_symbol": {
+          "title": "Currency symbol",
+          "type": "string",
+          "maxLength": 5,
+          "x-nullable": true
+        },
+        "integration_with_crm": {
+          "title": "Integration with crm",
+          "type": "boolean"
+        },
+        "integration_with_marketing_tools": {
+          "title": "Integration with marketing tools",
+          "type": "boolean"
+        },
+        "api_key_for_integrations": {
+          "title": "Api key for integrations",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "compliance_documents": {
+          "title": "Compliance documents",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "audit_log_enabled": {
+          "title": "Audit log enabled",
+          "type": "boolean"
+        },
+        "created_at": {
+          "title": "Created at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "updated_at": {
+          "title": "Updated at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "rating": {
+          "title": "Rating",
+          "description": "Average rating out of 5",
+          "type": "string",
+          "format": "decimal"
+        },
+        "number_of_reviews": {
+          "title": "Number of reviews",
+          "description": "Total number of reviews received",
+          "type": "integer",
+          "maximum": 2147483647,
+          "minimum": 0
+        },
+        "project_categories": {
+          "title": "Project categories",
+          "description": "List of project categories offered",
+          "type": "object",
+          "x-nullable": true
+        },
+        "verified_freelancers": {
+          "title": "Verified freelancers",
+          "description": "Indicates if the organization has verified freelancers",
+          "type": "boolean"
+        },
+        "membership_level": {
+          "title": "Membership level",
+          "description": "Membership level for the organization",
+          "type": "string",
+          "enum": ["basic", "premium", "enterprise"]
+        },
+        "commission_rate": {
+          "title": "Commission rate",
+          "description": "Commission rate (%) for freelance transactions",
+          "type": "string",
+          "format": "decimal"
+        },
+        "escrow_enabled": {
+          "title": "Escrow enabled",
+          "description": "Enable escrow services for secure payments",
+          "type": "boolean"
+        },
+        "dispute_resolution_policy": {
+          "title": "Dispute resolution policy",
+          "description": "Policy details for dispute resolution",
+          "type": "string",
+          "maxLength": 3000,
+          "x-nullable": true
+        },
+        "portfolio_link": {
+          "title": "Portfolio link",
+          "description": "Link to the organization's portfolio or showcase",
+          "type": "string",
+          "format": "uri",
+          "maxLength": 200,
+          "x-nullable": true
+        }
+      }
+    },
+    "Message": {
+      "required": ["sender", "receiver", "message"],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "sender": {
+          "title": "Sender",
+          "type": "integer"
+        },
+        "receiver": {
+          "title": "Receiver",
+          "type": "integer"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string",
+          "minLength": 1
+        },
+        "sent_at": {
+          "title": "Sent at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "is_read": {
+          "title": "Is read",
+          "type": "boolean"
+        },
+        "chat_room": {
+          "title": "Chat room",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "attachment": {
+          "title": "Attachment",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string",
+          "enum": ["sent", "delivered", "seen"]
+        }
+      }
+    },
+    "Notification": {
+      "required": ["user", "type", "message"],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "user": {
+          "title": "User",
+          "type": "integer"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string",
+          "enum": ["message", "project_update", "reminder", "content", "system"]
+        },
+        "message": {
+          "title": "Message",
+          "type": "string",
+          "maxLength": 1000,
+          "minLength": 1
+        },
+        "is_read": {
+          "title": "Is read",
+          "type": "boolean"
+        },
+        "created_at": {
+          "title": "Created at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "updated_at": {
+          "title": "Updated at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "action_url": {
+          "title": "Action url",
+          "type": "string",
+          "format": "uri",
+          "maxLength": 200,
+          "x-nullable": true
+        },
+        "is_urgent": {
+          "title": "Is urgent",
+          "type": "boolean"
+        },
+        "related_project": {
+          "title": "Related project",
+          "type": "integer",
+          "x-nullable": true
+        }
+      }
+    },
+    "OrganizationSetting": {
+      "required": ["name"],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Organization Name",
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1
+        },
+        "about_us": {
+          "title": "About us",
+          "description": "Description about the organization",
+          "type": "string",
+          "maxLength": 2000,
+          "x-nullable": true
+        },
+        "terms_and_conditions": {
+          "title": "Terms and conditions",
+          "type": "string",
+          "maxLength": 2000,
+          "x-nullable": true
+        },
+        "logo": {
+          "title": "Logo",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "contact_email": {
+          "title": "Contact email",
+          "type": "string",
+          "format": "email",
+          "maxLength": 254,
+          "x-nullable": true
+        },
+        "contact_phone": {
+          "title": "Contact phone",
+          "type": "string",
+          "maxLength": 20,
+          "x-nullable": true
+        },
+        "address": {
+          "title": "Address",
+          "type": "string",
+          "maxLength": 500,
+          "x-nullable": true
+        },
+        "social_media_links": {
+          "title": "Social media links",
+          "type": "object",
+          "x-nullable": true
+        },
+        "privacy_policy": {
+          "title": "Privacy policy",
+          "type": "string",
+          "maxLength": 2000,
+          "x-nullable": true
+        },
+        "is_active": {
+          "title": "Is active",
+          "type": "boolean"
+        },
+        "is_verified": {
+          "title": "Is verified",
+          "type": "boolean"
+        },
+        "organization_type": {
+          "title": "Organization type",
+          "type": "string",
+          "enum": ["nonprofit", "corporation", "startup"],
+          "x-nullable": true
+        },
+        "mission_statement": {
+          "title": "Mission statement",
+          "type": "string",
+          "maxLength": 1000,
+          "x-nullable": true
+        },
+        "vision_statement": {
+          "title": "Vision statement",
+          "type": "string",
+          "maxLength": 1000,
+          "x-nullable": true
+        },
+        "founding_year": {
+          "title": "Founding year",
+          "type": "integer",
+          "maximum": 2147483647,
+          "minimum": 1900,
+          "x-nullable": true
+        },
+        "registration_number": {
+          "title": "Registration number",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "vat_number": {
+          "title": "Vat number",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "contact_preference": {
+          "title": "Contact preference",
+          "type": "string",
+          "enum": ["email", "phone", "none"]
+        },
+        "payment_terms": {
+          "title": "Payment terms",
+          "type": "string",
+          "maxLength": 2000,
+          "x-nullable": true
+        },
+        "currency": {
+          "title": "Currency",
+          "type": "string",
+          "maxLength": 10,
+          "x-nullable": true
+        },
+        "invoice_template": {
+          "title": "Invoice template",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "default_language": {
+          "title": "Default language",
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 1
+        },
+        "supported_languages": {
+          "title": "Supported languages",
+          "type": "object",
+          "x-nullable": true
+        },
+        "operational_region": {
+          "title": "Operational region",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "legal_compliance": {
+          "title": "Legal compliance",
+          "type": "string",
+          "maxLength": 3000,
+          "x-nullable": true
+        },
+        "insurance_provider": {
+          "title": "Insurance provider",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "business_hours": {
+          "title": "Business hours",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "is_featured": {
+          "title": "Is featured",
+          "type": "boolean"
+        },
+        "customer_support_email": {
+          "title": "Customer support email",
+          "type": "string",
+          "format": "email",
+          "maxLength": 254,
+          "x-nullable": true
+        },
+        "customer_support_phone": {
+          "title": "Customer support phone",
+          "type": "string",
+          "maxLength": 20,
+          "x-nullable": true
+        },
+        "theme_color": {
+          "title": "Theme color",
+          "description": "Hex color code for theme",
+          "type": "string",
+          "maxLength": 7,
+          "x-nullable": true
+        },
+        "branding_font": {
+          "title": "Branding font",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "banner_image": {
+          "title": "Banner image",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "favicon": {
+          "title": "Favicon",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "tax_exemption_status": {
+          "title": "Tax exemption status",
+          "type": "boolean"
+        },
+        "legal_address": {
+          "title": "Legal address",
+          "type": "string",
+          "maxLength": 500,
+          "x-nullable": true
+        },
+        "tax_registration_number": {
+          "title": "Tax registration number",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "notification_preferences": {
+          "title": "Notification preferences",
+          "type": "object",
+          "x-nullable": true
+        },
+        "email_notifications_enabled": {
+          "title": "Email notifications enabled",
+          "type": "boolean"
+        },
+        "sms_notifications_enabled": {
+          "title": "Sms notifications enabled",
+          "type": "boolean"
+        },
+        "subscription_plan": {
+          "title": "Subscription plan",
+          "type": "string",
+          "maxLength": 50,
+          "x-nullable": true
+        },
+        "plan_expiration_date": {
+          "title": "Plan expiration date",
+          "type": "string",
+          "format": "date",
+          "x-nullable": true
+        },
+        "billing_address": {
+          "title": "Billing address",
+          "type": "string",
+          "maxLength": 500,
+          "x-nullable": true
+        },
+        "payment_gateway_info": {
+          "title": "Payment gateway info",
+          "type": "object",
+          "x-nullable": true
+        },
+        "two_factor_authentication_enabled": {
+          "title": "Two factor authentication enabled",
+          "type": "boolean"
+        },
+        "password_expiry_days": {
+          "title": "Password expiry days",
+          "type": "integer",
+          "maximum": 2147483647,
+          "minimum": 0
+        },
+        "employee_count": {
+          "title": "Employee count",
+          "type": "integer",
+          "maximum": 2147483647,
+          "minimum": 0,
+          "x-nullable": true
+        },
+        "vacation_policy": {
+          "title": "Vacation policy",
+          "type": "string",
+          "x-nullable": true
+        },
+        "employee_benefits": {
+          "title": "Employee benefits",
+          "type": "string",
+          "x-nullable": true
+        },
+        "organizational_structure": {
+          "title": "Organizational structure",
+          "type": "object",
+          "x-nullable": true
+        },
+        "internal_comms_tool": {
+          "title": "Internal comms tool",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "project_management_tool": {
+          "title": "Project management tool",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "task_automation_tools": {
+          "title": "Task automation tools",
+          "type": "object",
+          "x-nullable": true
+        },
+        "default_time_zone": {
+          "title": "Default time zone",
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 1
+        },
+        "date_format": {
+          "title": "Date format",
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 1
+        },
+        "currency_symbol": {
+          "title": "Currency symbol",
+          "type": "string",
+          "maxLength": 5,
+          "x-nullable": true
+        },
+        "integration_with_crm": {
+          "title": "Integration with crm",
+          "type": "boolean"
+        },
+        "integration_with_marketing_tools": {
+          "title": "Integration with marketing tools",
+          "type": "boolean"
+        },
+        "api_key_for_integrations": {
+          "title": "Api key for integrations",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "compliance_documents": {
+          "title": "Compliance documents",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "audit_log_enabled": {
+          "title": "Audit log enabled",
+          "type": "boolean"
+        },
+        "created_at": {
+          "title": "Created at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "updated_at": {
+          "title": "Updated at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        }
+      }
+    },
+    "ProjectCategory": {
+      "required": ["name"],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "x-nullable": true
+        },
+        "created_at": {
+          "title": "Created at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "updated_at": {
+          "title": "Updated at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        }
+      }
+    },
+    "Project": {
+      "required": [
+        "title",
+        "description",
+        "budget",
+        "deadline",
+        "terms_conditions",
+        "employer"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "title": {
+          "title": "Title",
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "minLength": 1
+        },
+        "budget": {
+          "title": "Budget",
+          "description": "Enter the project budget as a positive decimal value (e.g., 5000.00)",
+          "type": "string",
+          "format": "decimal"
+        },
+        "deadline": {
+          "title": "Deadline",
+          "type": "string",
+          "format": "date"
+        },
+        "terms_conditions": {
+          "title": "Terms conditions",
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "title": "Created at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "updated_at": {
+          "title": "Updated at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "status": {
+          "title": "Status",
+          "type": "string",
+          "enum": ["open", "in_progress", "completed", "cancelled"]
+        },
+        "skills_required": {
+          "title": "Skills required",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "location_preference": {
+          "title": "Location preference",
+          "type": "string",
+          "maxLength": 255,
+          "x-nullable": true
+        },
+        "attachments": {
+          "title": "Attachments",
+          "type": "string",
+          "readOnly": true,
+          "x-nullable": true,
+          "format": "uri"
+        },
+        "estimated_hours": {
+          "title": "Estimated hours",
+          "type": "integer",
+          "maximum": 2147483647,
+          "minimum": 0,
+          "x-nullable": true
+        },
+        "payment_type": {
+          "title": "Payment type",
+          "type": "string",
+          "enum": ["fixed", "hourly"]
+        },
+        "client_rating": {
+          "title": "Client rating",
+          "type": "number",
+          "maximum": 5,
+          "minimum": 0,
+          "x-nullable": true
+        },
+        "proposal_deadline": {
+          "title": "Proposal deadline",
+          "type": "string",
+          "format": "date",
+          "x-nullable": true
+        },
+        "is_featured": {
+          "title": "Is featured",
+          "type": "boolean"
+        },
+        "contract_type": {
+          "title": "Contract type",
+          "type": "string",
+          "maxLength": 100,
+          "x-nullable": true
+        },
+        "project_visibility": {
+          "title": "Project visibility",
+          "type": "string",
+          "enum": ["public", "private"]
+        },
+        "max_freelancers": {
+          "title": "Max freelancers",
+          "type": "integer",
+          "maximum": 2147483647,
+          "minimum": 1
+        },
+        "preferred_experience_level": {
+          "title": "Preferred experience level",
+          "type": "string",
+          "enum": ["beginner", "intermediate", "expert"],
+          "x-nullable": true
+        },
+        "employer": {
+          "title": "Employer",
+          "type": "integer"
+        },
+        "project_category": {
+          "title": "Project category",
+          "type": "integer",
+          "x-nullable": true
+        }
+      }
+    },
+    "ProjectReview": {
+      "required": ["reviewer", "reviewee", "project", "rating"],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "reviewer": {
+          "title": "Reviewer",
+          "type": "integer"
+        },
+        "reviewee": {
+          "title": "Reviewee",
+          "type": "integer"
+        },
+        "project": {
+          "title": "Project",
+          "type": "integer"
+        },
+        "comment": {
+          "title": "Comment",
+          "type": "string",
+          "maxLength": 1000,
+          "x-nullable": true
+        },
+        "rating": {
+          "title": "Rating",
+          "description": "Rating should be between 1 and 5",
+          "type": "integer",
+          "maximum": 5,
+          "minimum": 1
+        },
+        "created_at": {
+          "title": "Created at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "updated_at": {
+          "title": "Updated at",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "is_approved": {
+          "title": "Is approved",
+          "type": "boolean"
+        },
+        "is_anonymous": {
+          "title": "Is anonymous",
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
