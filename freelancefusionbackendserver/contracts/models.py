@@ -52,12 +52,12 @@ class Contract(models.Model):
     contract_address = models.CharField(max_length=42, blank=True, null=True)
     tx_hash = models.CharField(max_length=66, blank=True, null=True)
 
-    def clean(self):
-        """Custom validation to ensure start_date is before end_date."""
-        if self.end_date and self.start_date > self.end_date:
-            raise ValueError("End date cannot be earlier than start date.")
-        if self.start_date < date.today():
-            raise ValueError("Start date cannot be in the past.")
+    # def clean(self):
+    #     """Custom validation to ensure start_date is before end_date."""
+    #     if self.end_date and self.start_date > self.end_date:
+    #         raise ValueError("End date cannot be earlier than start date.")
+    #     if self.start_date < date.today():
+    #         raise ValueError("Start date cannot be in the past.")
 
     def __str__(self):
         return f"Contract for {self.project.title} between {self.employer.username} and {self.freelancer.username}"

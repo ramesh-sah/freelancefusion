@@ -3,10 +3,10 @@ import Chart from "react-apexcharts";
 
 function EmployerDashboard() {
   const [data, setData] = useState({
-    totalRevenue: 8700,
-    monthlyProfit: 5900,
-    quarterlySales: 3000,
-    netIncome: 1200,
+    totalRevenue: 87,
+    monthlyProfit: 59,
+    quarterlySales: 30,
+    netIncome: 12,
     revenueOverview: [
       { name: "Revenue", data: [1000, 2000, 3000, 4000] }
     ],
@@ -39,23 +39,23 @@ function EmployerDashboard() {
         </header>
         <section className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           <div className="bg-white rounded-lg shadow p-4 border border-primary-500">
-            <h4 className="text-neutral-950 font-medium mb-4">Total Revenue</h4>
-            <h3 className="text-neutral-950 font-title text-2xl mb-6">${data.totalRevenue.toFixed(2)}</h3>
+            <h4 className="text-neutral-950 font-medium mb-4">Total Project</h4>
+            <h3 className="text-neutral-950 font-title text-2xl mb-6">{data.totalRevenue.toFixed(2)}</h3>
             <div className="flex items-center justify-between gap-2">
               <span className="h-4 w-10 bg-primary-500 rounded-md"></span>
               <span className="h-4 w-10 bg-neutral-200 rounded-md"></span>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow p-4">
-            <h4 className="text-neutral-950 font-medium mb-4">Monthly Profit</h4>
-            <h3 className="text-neutral-950 font-title text-2xl mb-6">${data.monthlyProfit.toFixed(2)}</h3>
+            <h4 className="text-neutral-950 font-medium mb-4">Total Freelancer</h4>
+            <h3 className="text-neutral-950 font-title text-2xl mb-6">{data.monthlyProfit.toFixed(2)}</h3>
             <div className="flex items-center justify-between gap-2">
               <span className="h-4 w-10 bg-primary-500 rounded-md"></span>
               <span className="h-4 w-10 bg-neutral-200 rounded-md"></span>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow p-4">
-            <h4 className="text-neutral-950 font-medium mb-4">Quarterly Sales</h4>
+            <h4 className="text-neutral-950 font-medium mb-4">Payments</h4>
             <h3 className="text-neutral-950 font-title text-2xl mb-6">${data.quarterlySales.toFixed(2)}</h3>
             <div className="flex items-center justify-between gap-2">
               <span className="h-4 w-10 bg-primary-500 rounded-md"></span>
@@ -63,8 +63,8 @@ function EmployerDashboard() {
             </div>
           </div>
           <div className="bg-white rounded-lg shadow p-4">
-            <h4 className="text-neutral-950 font-medium mb-4">Net Income</h4>
-            <h3 className="text-neutral-950 font-title text-2xl mb-6">${data.netIncome.toFixed(2)}</h3>
+            <h4 className="text-neutral-950 font-medium mb-4"> Total </h4>
+            <h3 className="text-neutral-950 font-title text-2xl mb-6">{data.netIncome.toFixed(2)}</h3>
             <div className="flex items-center justify-between gap-2">
               <span className="h-4 w-10 bg-primary-500 rounded-md"></span>
               <span className="h-4 w-10 bg-neutral-200 rounded-md"></span>
@@ -74,7 +74,7 @@ function EmployerDashboard() {
         <section className="mt-8 grid gap-6 grid-cols-1 md:grid-cols-2">
           <div className="bg-white rounded-lg shadow p-6 flex-grow">
             <div className="flex flex-col gap-4">
-              <h4 className="text-neutral-950 font-medium">Revenue Overview</h4>
+              <h4 className="text-neutral-950 font-medium">Project Overview</h4>
               <div className="flex justify-between items-center py-4">
                 <p className="text-neutral-700">Yearly Progress</p>
                 <span className="h-6 w-6 bg-neutral-200 rounded-md"></span>
